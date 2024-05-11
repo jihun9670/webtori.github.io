@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #add8e6;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            background-color: white;
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        ol {
+            background-color: white;
+            padding: 20px;
+            margin: 0 auto;
+            width: fit-content;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        #nameDisplay {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>web</h1>
+    <ol>
+        <li>hypertext markup language</li>
+        <li>css</li>
+        <li>js</li>
+    </ol>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex odio quibusdam nihil voluptate ullam distinctio optio corrupti id, aliquam molestias, sequi, est culpa esse? Illum odit fugiat vero error excepturi?
+    <div class="center">
+        <button id="submitBtn">과제 제출</button>
+    </div>
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            var isConfirmed = confirm('과제를 제출하시겠습니까?');
+            if (isConfirmed) {
+                location.href = 'https://nothingkim.notion.site/6df2e77cfa334c9f86f87fa96b5fecc4';
+            }
+        });
+    </script>
+    <div class="center">
+        <button onclick="askForName()">이름 입력</button>
+    </div>
+    <div id="nameDisplay"></div>
+
+    <script>
+        function askForName() {
+            const userName = prompt("이름을 입력하세요:");
+            if(userName) {
+                document.getElementById("nameDisplay").innerText = "환영합니다, " + userName + "님!";
+            } else {
+                document.getElementById("nameDisplay").innerText = "이름이 입력되지 않았습니다.";
+            }
+        }
+    </script>
+</body>
+</html>
